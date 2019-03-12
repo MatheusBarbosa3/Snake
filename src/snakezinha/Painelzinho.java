@@ -23,8 +23,8 @@ import org.omg.CORBA.ORB;
  */
 public class Painelzinho extends JPanel implements Runnable, KeyListener {
 
-    public static final int WIDTH = 400;
-    public static final int HEIGHT = 400;
+    public static final int WIDTH = 500;
+    public static final int HEIGHT = 500;
 
     //loop do gamezin
     private Thread thread;
@@ -61,9 +61,10 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         thread = new Thread(this);
         thread.start();
     }
-
+    
+    //velocidade da cobra
     private void setFPS(int fps) {
-        tempoDoAlvo = 1000 / fps;
+        tempoDoAlvo = 1500 / fps;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -107,7 +108,8 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         }
 
     }
-
+    
+    //tempo do alvo 
     @Override
     public void run() {
         if (direcao) {
@@ -149,7 +151,8 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         SetUpLevel();
 
     }
-
+    
+    //nível de dificuldade de acordo com a pontuação
     private void SetUpLevel() {
         cobrinha = new ArrayList<Entity>();
         head = new Entity(SIZE);
@@ -169,7 +172,8 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         dx = dy = 0;
         setFPS(level * 20);
     }
-
+    
+    //posição da maçã quando é comida
     public void setApple() {
         int x = (int) (Math.random() * (WIDTH - SIZE));
         int y = (int) (Math.random() * (HEIGHT - SIZE));
@@ -178,7 +182,8 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         apple.setPosition(x, y);
 
     }
-
+    
+    //atualiza tamanho da cobra e configura o game over
     private void update() {
         if (gameOver) {
             if (start) {
@@ -257,7 +262,8 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         g.drawImage(image, 0, 0, null);
         g.dispose();
     }
-
+    
+    //cores e elementos do jogo
     public void render(Graphics2D g2d) {
         g2d.clearRect(0, 0, WIDTH, HEIGHT);
         g2d.setColor(Color.GREEN);
@@ -268,17 +274,20 @@ public class Painelzinho extends JPanel implements Runnable, KeyListener {
         g2d.setColor(Color.RED);
         apple.render(g2d);
         if (gameOver) {
-            g2d.drawString(" Se fodeu! ", 160, 250);
+            g2d.setColor(Color.WHITE);
+            g2d.drawString("Fim de jogo!", 220, 150);
+            g2d.drawString("Aperte Enter para começar novamente", 150, 165);
+            
         }
 
         g2d.setColor(Color.WHITE);
         g2d.drawString(" Pontuação: " + pontuacao + "  " + " Nível: " + level, 10, 10);
         if (dx == 0 && dy == 0) {
-            g2d.drawString(" Só vai Porran! ", 160, 150);
+            g2d.drawString("Você gosta de cobra? movimente-a com as setas!", 120, 150);
         }
         for (Entity e : cobrinha) {
             head.render(g2d);
-            g2d.setColor(Color.BLUE);
+            g2d.setColor(Color.magenta);
 
         }
     }

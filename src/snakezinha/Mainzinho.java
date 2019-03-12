@@ -18,14 +18,14 @@ public class Mainzinho {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Cobrinha");
+        JFrame frame = new JFrame("ANACONDA GAME ( ͡° ͜ʖ ͡°)");
         frame.setContentPane(new Painelzinho());
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setPreferredSize(new Dimension(Painelzinho.WIDTH, Painelzinho.HEIGHT));
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true); 
+        frame.setVisible(true);
     }
-    
+
 }
