@@ -7,7 +7,7 @@ Para dar continuidade é necessário ter instalado na sua máquina a versão mai
 
 ## Instalação:
 
-Para download e instalação do Java clique no link [Download Java](https://www.java.com/pt_BR/download/). Após instalado, basta executar o **JAR** e se divertir.
+Para download e instalação do Java clique no link [Download Java](https://www.java.com/pt_BR/download/). Após instalado, basta executar o arquivo **JAR** do jogo (encontrado na pasta dist do projeto) e se divertir.
 
 ## Jogabilidade:
 
