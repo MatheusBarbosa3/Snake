@@ -24,7 +24,7 @@ Para jogar de melhor modo, segue abaixo suas especificações de jogabilidade.
 
 > Níveis: a dificuldade do jogo é aumentada quando atingir o nível 10 (a velocidade da Snake aumenta).
 
-## Características básicas do projeto:
+## Características básicas:
 **Imagem:**
 
 Tela do game sendo executada.
