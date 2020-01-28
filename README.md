@@ -27,6 +27,6 @@ Para jogar de melhor modo, segue abaixo suas especificações de jogabilidade.
 ## Características básicas:
 **Imagem:**
 
-Tela do game sendo executada.
+Tela do game em execução.
 
 ![](https://github.com/MatheusBarbosa3/Snake/blob/master/src/imagens/game_print.png)
